@@ -9,7 +9,24 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-			//Write your code here
+			if (arr.length <= 1) {
+    return "-Infinity";
+  }
+
+  // Convert elements to numbers (since prompt returns strings)
+  const nums = arr.map(Number);
+
+  // Sort descending properly
+  nums.sort((a, b) => b - a);
+
+  // Find the second highest distinct number
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] !== nums[0]) {
+      return nums[i];
+    }
+  }
+
+  return "-Infinity";
 			
 		}
 
@@ -21,7 +38,7 @@
 			}
 			alert(secondHighest(arr));
 		}
-		Main();
+		Main(); 
 	</script>
 
     <script type="text/javascript" src="./script.js">
