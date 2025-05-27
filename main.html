@@ -10,16 +10,16 @@
 	<script>
 		function secondHighest(arr) {
 			if (arr.length <= 1) {
-    return "-Infinity";
-  }
+			    return "-Infinity";
+			}
 
-  // Convert elements to numbers (since prompt returns strings)
-  const nums = arr.map(Number);
+			     
+		  const nums = arr.map(Number);
 
-  // Sort descending properly
-  nums.sort((a, b) => b - a);
+		  nums.sort((a, b) => b - a);
 
-  // Find the second highest distinct number
+		let maxi = 0; 
+
   for (let i = 1; i < nums.length; i++) {
     if (nums[i] !== nums[0]) {
       return nums[i];
